@@ -37,4 +37,4 @@ const reducer = (state=initialState, action) => {
             return state;
         }
 }
-export default auth;
+export default reducer;
