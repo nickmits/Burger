@@ -32,7 +32,6 @@ class Checkout extends Component {
                     path={this.props.match.path + '/contact-data'} 
                     component={ContactData}/>
                 </div>  
-         //Because the ContactData component will now get its data from the centralized Redux state,  not via react-router-dom, dont need render
              
             )
         }
@@ -45,13 +44,9 @@ class Checkout extends Component {
 const mapStateToProps = state => {
     return{
         ings: state.burgerBuilder.ingredients,
-        purchased: state.order.purchased
+        purchased: state.orders.purchased
     }
 }
 
-
-
-//dont need mapDispatchToProps because we're not actually dispatching anything.. we do this through Route 
 export default connect(mapStateToProps)(Checkout);
-//if we had mapDispatchToProps only we need add null as first argument cause mapDispatchToProps need to be the second 
-//e.g. export default connect(null,mapDispatchToProps)(Checkout);
+
